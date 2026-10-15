@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../Frontend/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>NEUTECH</title>
+</head>
+<body>
+    <header class="top-navbar">
+        <div class="logo-area">
+            <i class="fa-solid fa-triangle-exclamation"></i>
+            <h2>NAVA-ALERT</h2>
+            <span class="badge-grupo">Grupo 5</span>
+        </div>
+
+        <nav class="nav-menu">
+            <a href="#" class="nav-item active"><i class="fa-solid fa-chart-line"></i> Dashboard</a>
+            <a href="#" class="nav-item"><i class="fa-solid fa-clock-rotate-left"></i> Historial</a>
+            
+        </nav>
+
+        <div class="header-right">
+            <div class="system-status-indicator">
+                <span class="status-dot online"></span>
+                <span>Online</span>
+            </div>
+            <span id="live-clock">00:00:00</span>
+            <div class="avatar"><i class="fa-solid fa-user-shield"></i></div>
+        </div>
+    </header>
+
+     <main class="main-content">
+            <!-- Resumen de Tarjetas (Kpis) -->
+            <section class="kpi-grid">
+                <div class="kpi-card">
+                    <div class="kpi-icon red"><i class="fa-solid fa-bell"></i></div>
+                    <div class="kpi-info">
+                        <h3>Alertas Activas</h3>
+                        <p id="kpi-active-alerts">3</p>
+                    </div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-icon blue"><i class="fa-solid fa-tower-broadcast"></i></div>
+                    <div class="kpi-info">
+                        <h3>Dispositivos Conectados</h3>
+                        <p>12 / 12</p>
+                    </div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-icon yellow"><i class="fa-solid fa-bolt"></i></div>
+                    <div class="kpi-info">
+                        <h3>Kit Solar / Energía</h3>
+                        <p>98% (Estable)</p>
+                    </div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-icon green"><i class="fa-solid fa-square-poll-vertical"></i></div>
+                    <div class="kpi-info">
+                        <h3>Eventos Procesados</h3>
+                        <p id="kpi-total-events">24</p>
+                    </div>
+                </div>
+            </section>
+
+                <div class="panel-box">
+                    <h2><i class="fa-solid fa-tower-cell"></i> Estado de Dispositivos Físicos</h2>
+                    <div class="devices-list">
+                        <div class="device-item">
+                            <div class="dev-info"><i class="fa-solid fa-volume-high"></i> <span>Sirena Principal Sector Norte</span></div>
+                            <span class="status-badge active">Activo</span>
+                        </div>
+                        <div class="device-item">
+                            <div class="dev-info"><i class="fa-solid fa-lightbulb"></i> <span>Baliza Estroboscópica Roja</span></div>
+                            <span class="status-badge active">Activo</span>
+                        </div>
+                        <div class="device-item">
+                            <div class="dev-info"><i class="fa-solid fa-solar-panel"></i> <span>Panel Fotovoltaico & Batería</span></div>
+                            <span class="status-badge active">Estable</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Tabla de Registro de Eventos en Tiempo Real -->
+            <section class="table-section">
+                <div class="panel-box full-width">
+                    <div class="table-header">
+                        <h2><i class="fa-solid fa-list"></i> Registro de Eventos y Alertas Recibidas</h2>
+                        <button id="btn-clear" class="btn-secondary"><i class="fa-solid fa-trash"></i> Limpiar Historial</button>
+                    </div>
+                    <div class="table-responsive">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Timestamp</th>
+                                    <th>Título / Descripción</th>
+                                    <th>Origen</th>
+                                    <th>Nivel de Riesgo</th>
+                                    <th>Estado</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody id="alerts-table-body">
+                                <!-- Inyectado por JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+        </main>
+    <footer>
+        <p>Sistema de información y prevención de riesgos.</p>
+        <p>Este formulario no reemplaza los servicios de emergencia.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
