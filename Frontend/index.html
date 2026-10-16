@@ -1,51 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../Frontend/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    <link rel="stylesheet" href="style.css?v=light_verdoso_2">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <title>NEUTECH</title>
 </head>
+
 <body>
     <header class="top-navbar">
         <div class="logo-area">
-            <i class="fa-solid fa-triangle-exclamation"></i>
-            <h2>NAVA-ALERT</h2>
-            <span class="badge-grupo">Grupo 5</span>
+            <img src="../imagenes/LOGO.png" alt="Logo de neutech">
+            <h2>NEUTECH</h2>
         </div>
 
         <nav class="nav-menu">
-            <a href="#" class="nav-item active"><i class="fa-solid fa-chart-line"></i> Dashboard</a>
-            <a href="#" class="nav-item"><i class="fa-solid fa-clock-rotate-left"></i> Historial</a>
-            
+            <a href="index.html" class="nav-item active"><i class="fa-solid fa-table-list"></i>Panel</a>
+            <a href="historial.html" class="nav-item"><i class="fa-solid fa-clock-rotate-left"></i> Historial</a>
         </nav>
 
-        <div class="header-right">
-            <div class="system-status-indicator">
-                <span class="status-dot online"></span>
-                <span>Online</span>
-            </div>
-            <span id="live-clock">00:00:00</span>
-            <div class="avatar"><i class="fa-solid fa-user-shield"></i></div>
-        </div>
     </header>
 
-     <main class="main-content">
-            <!-- Resumen de Tarjetas (Kpis) -->
-            <section class="kpi-grid">
+    <main class="main-content">
+        <section class="top-dashboard-grid">
+            <div class="kpi-grid">
                 <div class="kpi-card">
                     <div class="kpi-icon red"><i class="fa-solid fa-bell"></i></div>
                     <div class="kpi-info">
                         <h3>Alertas Activas</h3>
                         <p id="kpi-active-alerts">3</p>
-                    </div>
-                </div>
-                <div class="kpi-card">
-                    <div class="kpi-icon blue"><i class="fa-solid fa-tower-broadcast"></i></div>
-                    <div class="kpi-info">
-                        <h3>Dispositivos Conectados</h3>
-                        <p>12 / 12</p>
                     </div>
                 </div>
                 <div class="kpi-card">
@@ -55,67 +44,41 @@
                         <p>98% (Estable)</p>
                     </div>
                 </div>
-                <div class="kpi-card">
-                    <div class="kpi-icon green"><i class="fa-solid fa-square-poll-vertical"></i></div>
-                    <div class="kpi-info">
-                        <h3>Eventos Procesados</h3>
-                        <p id="kpi-total-events">24</p>
-                    </div>
+            </div>
+            <div class="panel-box map-container-box">
+                <div class="map-header">
+                    <h2><i class="fa-solid fa-map-location-dot"></i> Monitoreo Geográfico - Copahue</h2>
+                    <span class="badge-risk risk-bajo" id="map-api-badge"><i class="fa-solid fa-wind"></i> Copahue Live</span>
                 </div>
-            </section>
+                <div id="copahue-map" class="map-simulation"></div>
+            </div>
+        </section>
 
-                <div class="panel-box">
-                    <h2><i class="fa-solid fa-tower-cell"></i> Estado de Dispositivos Físicos</h2>
-                    <div class="devices-list">
-                        <div class="device-item">
-                            <div class="dev-info"><i class="fa-solid fa-volume-high"></i> <span>Sirena Principal Sector Norte</span></div>
-                            <span class="status-badge active">Activo</span>
-                        </div>
-                        <div class="device-item">
-                            <div class="dev-info"><i class="fa-solid fa-lightbulb"></i> <span>Baliza Estroboscópica Roja</span></div>
-                            <span class="status-badge active">Activo</span>
-                        </div>
-                        <div class="device-item">
-                            <div class="dev-info"><i class="fa-solid fa-solar-panel"></i> <span>Panel Fotovoltaico & Batería</span></div>
-                            <span class="status-badge active">Estable</span>
-                        </div>
-                    </div>
+        <!-- Sección de Alertas Prioritarias -->
+        <section class="priority-section">
+            <div class="panel-box full-width">
+                <div class="table-header">
+                    <h2><i class="fa-solid fa-triangle-exclamation"></i> Alertas Prioritarias Activas</h2>
+                    <span class="badge-origin real"><i class="fa-solid fa-shield-halved"></i> Prioridad Alta</span>
                 </div>
-            </section>
-
-            <!-- Tabla de Registro de Eventos en Tiempo Real -->
-            <section class="table-section">
-                <div class="panel-box full-width">
-                    <div class="table-header">
-                        <h2><i class="fa-solid fa-list"></i> Registro de Eventos y Alertas Recibidas</h2>
-                        <button id="btn-clear" class="btn-secondary"><i class="fa-solid fa-trash"></i> Limpiar Historial</button>
-                    </div>
-                    <div class="table-responsive">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>ID</th>
-                                    <th>Timestamp</th>
-                                    <th>Título / Descripción</th>
-                                    <th>Origen</th>
-                                    <th>Nivel de Riesgo</th>
-                                    <th>Estado</th>
-                                    <th>Acciones</th>
-                                </tr>
-                            </thead>
-                            <tbody id="alerts-table-body">
-                                <!-- Inyectado por JavaScript -->
-                            </tbody>
-                        </table>
-                    </div>
+                <div class="priority-grid" id="priority-alerts-container"> 
                 </div>
-            </section>
-        </main>
-    <footer>
-        <p>Sistema de información y prevención de riesgos.</p>
-        <p>Este formulario no reemplaza los servicios de emergencia.</p>
-    </footer>
+            </div>
+        </section>
 
-    <script src="script.js"></script>
+        <!-- Sección de Estado General de Nodos -->
+        <section class="nodes-section">
+            <div class="panel-box full-width">
+                <h2><i class="fa-solid fa-network-wired"></i> Estado de Nodos y Red de Telemetría</h2>
+                <div class="nodes-grid" id="nodes-container">
+                </div>
+            </div>
+        </section>
+    </main>
+ 
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>    
+    <script src="script.js?v=copahue_2"></script>
 </body>
+
 </html>
