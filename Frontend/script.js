@@ -59,7 +59,11 @@ const ALERTAS_INICIALES = [
         origin_type: 'simulated',
         level: 'critical',
         status: 'Pendiente',
+<<<<<<< Updated upstream
         channels: ['Sirena Acústica', 'Baliza Roja', 'SMS Defensa Civil'],
+=======
+        channels: ['Sirena acústica', 'Baliza roja', 'SMS Defensa civil'],
+>>>>>>> Stashed changes
         metadata: {
             alert_evaluated: true,
             node_id: 'NODE-02',
@@ -71,11 +75,19 @@ const ALERTAS_INICIALES = [
         time: '14:22:00',
         isoDate: '2026-10-15T14:22:00.000Z',
         title: 'Tremor armónico continuo y sismicidad en flanco este',
+<<<<<<< Updated upstream
         source: 'Estación Sísmica OVDAS / SEGEMAR',
         origin_type: 'simulated',
         level: 'high',
         status: 'Confirmado',
         channels: ['Radio VHF', 'Aviso Digital', 'Red Caviahue'],
+=======
+        source: 'Estación sísmica OVDAS / SEGEMAR',
+        origin_type: 'simulated',
+        level: 'high',
+        status: 'Confirmado',
+        channels: ['Radio VHF', 'Aviso digital', 'Red caviahue'],
+>>>>>>> Stashed changes
         metadata: {
             alert_evaluated: true,
             node_id: 'NODE-03',
@@ -87,7 +99,11 @@ const ALERTAS_INICIALES = [
         time: '14:15:42',
         isoDate: '2026-10-15T14:15:42.000Z',
         title: 'Lectura térmica anómala sin confirmación de sensor secundario',
+<<<<<<< Updated upstream
         source: 'Sensor Térmico Laguna Cráter',
+=======
+        source: 'Sensor térmico laguna cráter',
+>>>>>>> Stashed changes
         origin_type: 'test',
         level: 'medium',
         status: 'Pendiente',
@@ -424,11 +440,19 @@ function initMapIfPresent() {
     }).addTo(map);
 
     const puntos = [
+<<<<<<< Updated upstream
         { nombre: 'Cráter Principal Volcán Copahue', coords: [-37.859, -71.171], desc: 'Cráter activo El Agrio. Monitoreo de fumarolas y gases SO2.', estado: 'Alerta Amarilla' },
         { nombre: 'Termas de Copahue - Sirena Norte', coords: [-37.820, -71.095], desc: 'Sirena acústica de evacuación y baliza sector norte.', estado: 'Activo' },
         { nombre: 'Villa Caviahue - Centro Operativo', coords: [-37.880, -71.055], desc: 'Población urbana, centro de evacuación y red comunitaria.', estado: 'Normal' },
         { nombre: 'Estación Sísmica OVDAS / SEGEMAR', coords: [-37.865, -71.135], desc: 'Sismógrafo triaxial de banda ancha (flanco este del volcán).', estado: 'Operando' },
         { nombre: 'Repetidora Cerro Mellizo & Kit Solar', coords: [-37.842, -71.080], desc: 'Enlace de comunicaciones VHF/LoRa y panel fotovoltaico.', estado: 'Batería 98%' }
+=======
+        { nombre: 'Cráter principal volcán Copahue', coords: [-37.859, -71.171], desc: 'Cráter activo El Agrio. Monitoreo de fumarolas y gases SO2.', estado: 'Alerta Amarilla' },
+        { nombre: 'Termas de Copahue - Sirena norte', coords: [-37.820, -71.095], desc: 'Sirena acústica de evacuación y baliza sector norte.', estado: 'Activo' },
+        { nombre: 'Villa Caviahue - Centro operativo', coords: [-37.880, -71.055], desc: 'Población urbana, centro de evacuación y red comunitaria.', estado: 'Normal' },
+        { nombre: 'Estación sísmica OVDAS / SEGEMAR', coords: [-37.865, -71.135], desc: 'Sismógrafo triaxial de banda ancha.', estado: 'Operando' },
+        { nombre: 'Repetidora cerro mellizo y kit solar', coords: [-37.842, -71.080], desc: 'Enlace de comunicaciones VHF/LoRa y panel fotovoltaico.', estado: 'Batería 98%' }
+>>>>>>> Stashed changes
     ];
 
     puntos.forEach(p => {
