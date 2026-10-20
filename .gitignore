@@ -1,0 +1,13 @@
+﻿# NEUTECH - Archivos excluidos de Git
+
+**/bin/
+**/obj/
+**/.vs/
+
+**/.env
+**/.env.*
+**/appsettings.json
+**/appsettings.Development.json
+
+*.user
+*.suo
