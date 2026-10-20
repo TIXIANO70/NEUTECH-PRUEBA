@@ -147,41 +147,14 @@ Los siguientes componentes aparecen en la documentación técnica:
 
   LEDs indicadores:                    Señalización visual
 
-  Resistencias de 100 Ω:               Limitación de corriente y
+  Resistencias:                       Limitación de corriente y
                                       protección en circuitos LED, según
                                       el documento
 
   Buzzer:                              Emisión de alertas sonoras
+  
+<img width="2943" height="3386" alt="arduino" src="https://github.com/user-attachments/assets/9f97acf8-a2f7-4d69-90cd-971b0cf8c7d4" />
 
-  Kit solar fotovoltaico:              Alimentación autónoma prevista, con
-                                      panel, regulador y batería
-
-> **Imagen recomendada:** una foto real del prototipo armado, guardada
-> como `docs/prototipo-fisico.jpg`. Colocarla debajo de esta sección o
-> al inicio de la sección de hardware.
-
-```{=html}
-<!-- IMAGEN: docs/prototipo-fisico.jpg -->
-```
-```{=html}
-<!-- Cuando el archivo exista, descomentar la siguiente línea: -->
-```
-```{=html}
-<!-- ![Prototipo físico del SCAE](docs/prototipo-fisico.jpg) -->
-```
-También se puede agregar un esquema de conexiones como
-`docs/conexiones-electronicas.png`. Conviene que la imagen corresponda
-al circuito real implementado.
-
-```{=html}
-<!-- IMAGEN: docs/conexiones-electronicas.png -->
-```
-```{=html}
-<!-- Cuando el archivo exista, descomentar la siguiente línea: -->
-```
-```{=html}
-<!-- ![Esquema de conexiones electrónicas](docs/conexiones-electronicas.png) -->
-```
 ## Dashboard web
 El dashboard es el centro de monitoreo para los operadores. Según el
 documento, contempla:
@@ -269,14 +242,6 @@ manera:
     digitales, la recepción de eventos y la conectividad resiliente.
 -   No incluye transacciones comerciales, cobros, telemedicina compleja
     ni seguimiento satelital de vehículos particulares.
-
-### Mejoras previstas
-Como objetivo de corto plazo, se plantea validar e implementar los
-prototipos físicos y el dashboard interconectado en una primera prueba
-piloto regional. A largo plazo, se propone consolidar el Sistema de comunicación y alertas como
-infraestructura tecnológica de emergencia para comunidades cordilleranas
-aisladas e incorporar en futuras versiones más capacidades de
-sensorización ambiental avanzada.
 
 ### Pruebas documentadas
 
