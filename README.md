@@ -96,8 +96,7 @@ El flujo general descrito en la documentación es el siguiente:
     información sobre eventos de riesgo.
 2.  La información llega a través de la API y es recibida por el
     sistema.
-3.  El nodo basado en ESP32 participa en la recolección y comunicación
-    de datos.
+3.  Dispositivo ESP32 se encarga de levantar una red local inalambrica IEEE 802.11
 4.  El servidor procesa y estructura la información.
 5.  Los eventos se guardan en PostgreSQL para conservar el historial.
 6.  El dashboard web consulta la API y presenta las alertas y el estado
